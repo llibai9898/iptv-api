@@ -1,0 +1,18 @@
+名称：Docker 镜像 CI: Docker Image CI
+
+在：:
+  推送：:
+    分支：[ "master" ]: [ "master" ]
+  拉取请求：:
+    分支：[ "master" ]: [ "master" ]
+
+职位：:
+
+  构建：:
+
+    运行环境：ubuntu-latest: ubuntu-latest
+
+    步骤：:
+    - 使用：actions/checkout@v4uses: actions/checkout@v4
+    - 名称：构建 Docker 镜像name: Build the Docker image
+      运行：docker build . --file Dockerfile --tag my-image-name:$(date +%s): docker build . --file Dockerfile --tag my-image-name:$(date +%s)
